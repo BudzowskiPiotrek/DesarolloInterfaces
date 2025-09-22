@@ -31,7 +31,7 @@ public class ControladorCliente
                     Console.WriteLine("Saliendo de la aplicación...");
                     break;
                 default:
-                    Console.WriteLine("Opción no válida. Presiona cualquier tecla para intentarlo de nuevo.");
+                    Console.WriteLine("Opción no válida");
                     break;
             }
         }
@@ -44,7 +44,7 @@ public class ControladorCliente
         vista.PedirTelefono();
         string telefono = Console.ReadLine();
         modelo.AnadirCliente(new Clientes(nombre, telefono));
-        Console.WriteLine("\nCliente añadido con éxito!");
+        Console.WriteLine("\nCliente añadido");
     }
 
     private void ListarClientes()
