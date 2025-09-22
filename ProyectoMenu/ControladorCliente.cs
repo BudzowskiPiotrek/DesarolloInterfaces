@@ -32,7 +32,6 @@ public class ControladorCliente
                     break;
                 default:
                     Console.WriteLine("Opción no válida. Presiona cualquier tecla para intentarlo de nuevo.");
-                    Console.ReadKey();
                     break;
             }
         }
@@ -40,8 +39,11 @@ public class ControladorCliente
 
     private void AnadirCliente()
     {
-        Clientes nuevoCliente = vista.PedirDatosCliente();
-        modelo.AnadirCliente(nuevoCliente);
+        vista.PedirNombre();
+        string nombre = Console.ReadLine();
+        vista.PedirTelefono();
+        string telefono = Console.ReadLine();
+        modelo.AnadirCliente(new Clientes(nombre, telefono));
         Console.WriteLine("\nCliente añadido con éxito!");
     }
 

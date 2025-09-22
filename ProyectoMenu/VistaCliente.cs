@@ -7,14 +7,13 @@ public class VistaCliente
         Console.WriteLine("3. Salir");
     }
 
-    public Clientes PedirDatosCliente()
+    public void PedirNombre()
     {
-        Console.WriteLine("--- Añadir Nuevo Cliente ---");
         Console.Write("Ingresa el nombre: ");
-        string nombre = Console.ReadLine();
+    }
+    public void PedirTelefono()
+    {
         Console.Write("Ingresa el teléfono: ");
-        string telefono = Console.ReadLine();
-        return new Clientes(nombre, telefono);
     }
 
     public void MostrarListaClientes(List<Clientes> clientes)
