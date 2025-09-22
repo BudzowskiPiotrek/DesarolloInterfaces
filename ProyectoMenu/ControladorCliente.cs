@@ -2,18 +2,18 @@ public class ControladorCliente
 {
     private RepositorioClientes modelo;
     private VistaCliente vista;
-    private bool estaCorriendo;
+    private bool ejecutado;
 
     public ControladorCliente(RepositorioClientes modelo, VistaCliente vista)
     {
         this.modelo = modelo;
         this.vista = vista;
-        this.estaCorriendo = true;
+        this.ejecutado = true;
     }
 
     public void StartApp()
     {
-        while (estaCorriendo)
+        while (ejecutado)
         {
             vista.MostrarMenu();
             string opcion = Console.ReadLine();
@@ -27,7 +27,7 @@ public class ControladorCliente
                     ListarClientes();
                     break;
                 case "3":
-                    estaCorriendo = false;
+                    ejecutado = false;
                     Console.WriteLine("Saliendo de la aplicación...");
                     break;
                 default:
