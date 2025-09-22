@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Wilku\\Documents\\GitHub\\Interfaces\\HelloApp\\HelloApp.csproj": {}
+    "C:\\Users\\Wilku\\Documents\\GitHub\\interfaces\\proyectomenu\\ProyectoMenu.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Wilku\\Documents\\GitHub\\Interfaces\\HelloApp\\HelloApp.csproj": {
+    "C:\\Users\\Wilku\\Documents\\GitHub\\interfaces\\proyectomenu\\ProyectoMenu.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Wilku\\Documents\\GitHub\\Interfaces\\HelloApp\\HelloApp.csproj",
-        "projectName": "HelloApp",
-        "projectPath": "C:\\Users\\Wilku\\Documents\\GitHub\\Interfaces\\HelloApp\\HelloApp.csproj",
+        "projectUniqueName": "C:\\Users\\Wilku\\Documents\\GitHub\\interfaces\\proyectomenu\\ProyectoMenu.csproj",
+        "projectName": "ProyectoMenu",
+        "projectPath": "C:\\Users\\Wilku\\Documents\\GitHub\\interfaces\\proyectomenu\\ProyectoMenu.csproj",
         "packagesPath": "C:\\Users\\Wilku\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Wilku\\Documents\\GitHub\\Interfaces\\HelloApp\\obj\\",
+        "outputPath": "C:\\Users\\Wilku\\Documents\\GitHub\\interfaces\\proyectomenu\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Wilku\\AppData\\Roaming\\NuGet\\NuGet.Config"
