@@ -1,10 +1,10 @@
 public class ControladorCliente
 {
-    private RepositorioClientes modelo;
+    private ContenedorClientes modelo;
     private VistaCliente vista;
     private bool estaCorriendo;
 
-    public ControladorCliente(RepositorioClientes modelo, VistaCliente vista)
+    public ControladorCliente(ContenedorClientes modelo, VistaCliente vista)
     {
         this.modelo = modelo;
         this.vista = vista;

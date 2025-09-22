@@ -1,4 +1,4 @@
-public class RepositorioClientes
+public class ContenedorClientes
 {
     private List<Clientes> clientes = new List<Clientes>();
 

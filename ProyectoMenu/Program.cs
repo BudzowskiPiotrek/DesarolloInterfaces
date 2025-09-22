@@ -2,7 +2,7 @@
 {
     static void Main(string[] args)
     {
-        var modelo = new RepositorioClientes();
+        var modelo = new ContenedorClientess();
         var vista = new VistaCliente();
         var controlador = new ControladorCliente(modelo, vista);
         
