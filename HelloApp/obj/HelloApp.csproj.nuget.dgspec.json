@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Wilku\\Documents\\GitHub\\Interfaces\\HelloApp\\HelloApp.csproj": {}
+    "C:\\Users\\Wilku\\Documents\\GitHub\\DesarolloInterfaces\\HelloApp\\HelloApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Wilku\\Documents\\GitHub\\Interfaces\\HelloApp\\HelloApp.csproj": {
+    "C:\\Users\\Wilku\\Documents\\GitHub\\DesarolloInterfaces\\HelloApp\\HelloApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Wilku\\Documents\\GitHub\\Interfaces\\HelloApp\\HelloApp.csproj",
+        "projectUniqueName": "C:\\Users\\Wilku\\Documents\\GitHub\\DesarolloInterfaces\\HelloApp\\HelloApp.csproj",
         "projectName": "HelloApp",
-        "projectPath": "C:\\Users\\Wilku\\Documents\\GitHub\\Interfaces\\HelloApp\\HelloApp.csproj",
+        "projectPath": "C:\\Users\\Wilku\\Documents\\GitHub\\DesarolloInterfaces\\HelloApp\\HelloApp.csproj",
         "packagesPath": "C:\\Users\\Wilku\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Wilku\\Documents\\GitHub\\Interfaces\\HelloApp\\obj\\",
+        "outputPath": "C:\\Users\\Wilku\\Documents\\GitHub\\DesarolloInterfaces\\HelloApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Wilku\\AppData\\Roaming\\NuGet\\NuGet.Config"

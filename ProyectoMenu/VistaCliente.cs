@@ -7,6 +7,10 @@ public class VistaCliente
         Console.WriteLine("3. Salir");
     }
 
+    public void AnadirCliente()
+    {
+        Console.Write("\nCliente añadido");
+    }
     public void PedirNombre()
     {
         Console.Write("Ingresa el nombre: ");
