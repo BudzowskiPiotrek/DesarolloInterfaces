@@ -1,0 +1,5 @@
+C:\Users\Wilku\Documents\GitHub\DesarolloInterfaces\FabricaHonda\obj\Debug\net8.0\FabricaHonda.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Wilku\Documents\GitHub\DesarolloInterfaces\FabricaHonda\obj\Debug\net8.0\FabricaHonda.AssemblyInfoInputs.cache
+C:\Users\Wilku\Documents\GitHub\DesarolloInterfaces\FabricaHonda\obj\Debug\net8.0\FabricaHonda.AssemblyInfo.cs
+C:\Users\Wilku\Documents\GitHub\DesarolloInterfaces\FabricaHonda\obj\Debug\net8.0\FabricaHonda.csproj.CoreCompileInputs.cache
+C:\Users\Wilku\Documents\GitHub\DesarolloInterfaces\FabricaHonda\obj\Debug\net8.0\FabricaHonda.sourcelink.json

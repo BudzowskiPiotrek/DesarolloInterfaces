@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Wilku\\Documents\\GitHub\\DesarolloInterfaces\\ProyectoMenu\\ProyectoMenu.csproj": {}
+    "C:\\Users\\Wilku\\Documents\\GitHub\\DesarolloInterfaces\\FabricaHonda\\FabricaHonda.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Wilku\\Documents\\GitHub\\DesarolloInterfaces\\ProyectoMenu\\ProyectoMenu.csproj": {
+    "C:\\Users\\Wilku\\Documents\\GitHub\\DesarolloInterfaces\\FabricaHonda\\FabricaHonda.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Wilku\\Documents\\GitHub\\DesarolloInterfaces\\ProyectoMenu\\ProyectoMenu.csproj",
-        "projectName": "ProyectoMenu",
-        "projectPath": "C:\\Users\\Wilku\\Documents\\GitHub\\DesarolloInterfaces\\ProyectoMenu\\ProyectoMenu.csproj",
+        "projectUniqueName": "C:\\Users\\Wilku\\Documents\\GitHub\\DesarolloInterfaces\\FabricaHonda\\FabricaHonda.csproj",
+        "projectName": "FabricaHonda",
+        "projectPath": "C:\\Users\\Wilku\\Documents\\GitHub\\DesarolloInterfaces\\FabricaHonda\\FabricaHonda.csproj",
         "packagesPath": "C:\\Users\\Wilku\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Wilku\\Documents\\GitHub\\DesarolloInterfaces\\ProyectoMenu\\obj\\",
+        "outputPath": "C:\\Users\\Wilku\\Documents\\GitHub\\DesarolloInterfaces\\FabricaHonda\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Wilku\\AppData\\Roaming\\NuGet\\NuGet.Config"
