@@ -3,3 +3,13 @@ C:\Users\Wilku\Documents\GitHub\DesarolloInterfaces\FabricaHonda\obj\Debug\net8.
 C:\Users\Wilku\Documents\GitHub\DesarolloInterfaces\FabricaHonda\obj\Debug\net8.0\FabricaHonda.AssemblyInfo.cs
 C:\Users\Wilku\Documents\GitHub\DesarolloInterfaces\FabricaHonda\obj\Debug\net8.0\FabricaHonda.csproj.CoreCompileInputs.cache
 C:\Users\Wilku\Documents\GitHub\DesarolloInterfaces\FabricaHonda\obj\Debug\net8.0\FabricaHonda.sourcelink.json
+C:\Users\Wilku\Documents\GitHub\DesarolloInterfaces\FabricaHonda\bin\Debug\net8.0\FabricaHonda.exe
+C:\Users\Wilku\Documents\GitHub\DesarolloInterfaces\FabricaHonda\bin\Debug\net8.0\FabricaHonda.deps.json
+C:\Users\Wilku\Documents\GitHub\DesarolloInterfaces\FabricaHonda\bin\Debug\net8.0\FabricaHonda.runtimeconfig.json
+C:\Users\Wilku\Documents\GitHub\DesarolloInterfaces\FabricaHonda\bin\Debug\net8.0\FabricaHonda.dll
+C:\Users\Wilku\Documents\GitHub\DesarolloInterfaces\FabricaHonda\bin\Debug\net8.0\FabricaHonda.pdb
+C:\Users\Wilku\Documents\GitHub\DesarolloInterfaces\FabricaHonda\obj\Debug\net8.0\FabricaHonda.dll
+C:\Users\Wilku\Documents\GitHub\DesarolloInterfaces\FabricaHonda\obj\Debug\net8.0\refint\FabricaHonda.dll
+C:\Users\Wilku\Documents\GitHub\DesarolloInterfaces\FabricaHonda\obj\Debug\net8.0\FabricaHonda.pdb
+C:\Users\Wilku\Documents\GitHub\DesarolloInterfaces\FabricaHonda\obj\Debug\net8.0\FabricaHonda.genruntimeconfig.cache
+C:\Users\Wilku\Documents\GitHub\DesarolloInterfaces\FabricaHonda\obj\Debug\net8.0\ref\FabricaHonda.dll
