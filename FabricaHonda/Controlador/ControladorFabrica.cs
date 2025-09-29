@@ -39,7 +39,7 @@ public class ControladorFabrica
                 editarCoche.empezar();
                 return true;
             case "5":
-                EditarColores editarColores = new EditarColores(vista, modelo);
+                EditarColoresAction editarColores = new EditarColoresAction(vista, modelo);
                 editarColores.empezar();
                 return true;
             case "0":

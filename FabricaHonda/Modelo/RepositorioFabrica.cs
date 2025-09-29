@@ -39,16 +39,6 @@ public class RepositorioFabrica
             }
         }
 
-        if (motorSeleccionado == null)
-        {
-            throw new InvalidOperationException("Motor no encontrado o no disponible");
-        }
-
-        if (motorSeleccionado.tipoMotor == "gasolina 3.0" && modelo != "Civic")
-        {
-            throw new InvalidOperationException("El motor 'gasolina 3.0' solo puede ser montado en'Civic'.");
-        }
-
         Coche nuevoCoche = new Coche(siguenteVehiculoId, modelo, motorSeleccionado, color, tipoExtra);
         vehiculos.Add(nuevoCoche);
         siguenteVehiculoId++;
