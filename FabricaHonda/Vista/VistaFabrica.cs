@@ -46,25 +46,30 @@ public class VistaFabrica
         "Introduce el COLOR del vehículo:",                            // [10]
         "Introduce el TIPO EXTRA (STANDARD, SPORT, PRESIDENT):",       // [11] 
         "Introduce el TIPO DE MOTOR (HIBRIDO, DIESEL, GASOLINA):",     // [12]
-        "Introduce la CILINDRADA (1.5, 1.9, 2.0, 2.1, 3.0 ):"          // [13]
+        "Introduce la CILINDRADA (1.5, 1.9, 2.0, 2.1, 3.0 ):",         // [13]
+        "Colores disponibles actualmente:",     // [14]
+        "¿Color que quieres añadir?",           // [15]
     };
 
     private readonly List<string> mensajesError = new List<string>
     {
-        "❌ Opción no válida. Por favor, introduce un número del menú. ❌",              // [0] 
+        "❌ Opción no válida. Vuelves al menu principal  . ❌",                          // [0] 
         "❌ El motor no fue encontrado o ya está montado en un vehículo. ❌",            // [1] 
         "❌ Restricción: La Gasolina 3.0 solo se puede montar en el modelo 'Civic'. ❌", // [2] 
         "❌ El bastidor introducido debe ser numérico. ❌",                              // [3] 
-        "❌ El motor no fue encontrado ❌"                                               // [4]  
+        "❌ El motor no fue encontrado ❌",                                              // [4]  
+        "❌ Color no válido. ❌",                                                        // [5]
+        "❌ Color ya existe. ❌"                                                         // [6]
         
     };
 
     private readonly List<string> mensajesConfirmacion = new List<string>
     {
-        "✅ Saliendo de la aplicación.✅",                            // [0] 
-        "✅ Motor registrado correctamente en el inventario. ✅",     // [1]
-        "✅ Vehículo construido ✅",                                  // [2] 
-        "✅ RESULTADO: Motor con bastidor está MONTADO ✅",           // [3]
-        "📦 RESULTADO: Motor con bastidor está DISPONIBLE en almacén."// [4]
+        "✅ Saliendo de la aplicación.✅",                             // [0] 
+        "✅ Motor registrado correctamente en el inventario. ✅",      // [1]
+        "✅ Vehículo construido ✅",                                   // [2] 
+        "✅ RESULTADO: Motor con bastidor está MONTADO ✅",            // [3]
+        "📦 RESULTADO: Motor con bastidor está DISPONIBLE en almacén", // [4]
+        "✅ Color agregado correctamente."                             // [5]
     };
 }

@@ -47,6 +47,12 @@ public class ConstruirCocheAction // <-- Primera clase, todo bien.
 
         Console.WriteLine(vista.mensajesControl[10]);
         string color = Console.ReadLine();
+        List<string> coloresPermitidos = modelo.ObtenerColores();
+        if (string.IsNullOrWhiteSpace(colorEntrada) || !coloresPermitidos.Contains(colorEntrada))
+        {
+            vista.mostrarError(5);
+            return;
+        }
 
 
         Console.WriteLine(vista.mensajesControl[11]);
