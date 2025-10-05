@@ -39,8 +39,7 @@ public class EditarColoresAction
 
         try
         {
-
-            modelo.AgregarColor(nuevoColorNormalizado);
+            modelo.AgregarColor(nuevoColorUpper);
             vista.mostrarConfirmacion(5);
         }
         catch (Exception)
