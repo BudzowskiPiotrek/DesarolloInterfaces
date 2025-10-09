@@ -1,4 +1,4 @@
-public class ConstruirCocheAction // <-- Primera clase, todo bien.
+public class ConstruirCocheAction
 {
     private readonly VistaFabrica vista;
     private readonly RepositorioFabrica modelo;
@@ -46,7 +46,7 @@ public class ConstruirCocheAction // <-- Primera clase, todo bien.
         }
 
         Console.WriteLine(vista.mensajesControl[10]);
-        string color = Console.ReadLine();
+        string color = Console.ReadLine().ToUpper();
         List<string> coloresPermitidos = modelo.ObtenerColores();
         if (string.IsNullOrWhiteSpace(color) || !coloresPermitidos.Contains(color))
         {

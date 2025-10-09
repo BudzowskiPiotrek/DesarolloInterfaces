@@ -49,6 +49,9 @@ public class VistaFabrica
         "Introduce la CILINDRADA (1.5, 1.9, 2.0, 2.1, 3.0 ):",         // [13]
         "Colores disponibles actualmente:",     // [14]
         "¿Color que quieres añadir?",           // [15]
+        "¿Cual es la id dek coche a editar?",   // [16]
+        "---- LISTA DE COCHES EXISTENTES ----", // [17]
+        "Dime Id de Coche a editar",            // [18]
     };
 
     private readonly List<string> mensajesError = new List<string>
@@ -59,8 +62,9 @@ public class VistaFabrica
         "❌ El bastidor introducido debe ser numérico. ❌",                              // [3] 
         "❌ El motor no fue encontrado ❌",                                              // [4]  
         "❌ Color no válido. ❌",                                                        // [5]
-        "❌ Color ya existe. ❌"                                                         // [6]
-        
+        "❌ Color ya existe. ❌",                                                        // [6]
+        "❌ La id introducido debe ser numérico. ❌",                                    // [7]
+        "❌ No hay coches en la fabrica ❌"                                              // [8]
     };
 
     private readonly List<string> mensajesConfirmacion = new List<string>
