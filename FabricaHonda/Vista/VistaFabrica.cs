@@ -72,8 +72,8 @@ public class VistaFabrica
         "✅ Saliendo de la aplicación.✅",                             // [0] 
         "✅ Motor registrado correctamente en el inventario. ✅",      // [1]
         "✅ Vehículo construido ✅",                                   // [2] 
-        "✅ RESULTADO: Motor con bastidor está MONTADO ✅",            // [3]
-        "📦 RESULTADO: Motor con bastidor está DISPONIBLE en almacén", // [4]
+        "✅ RESULTADO: Motor con este bastidor está MONTADO ✅",            // [3]
+        "📦 RESULTADO: Motor con este bastidor está DISPONIBLE en almacén", // [4]
         "✅ Color agregado correctamente."                             // [5]
     };
 }
