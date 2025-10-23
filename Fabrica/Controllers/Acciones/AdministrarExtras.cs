@@ -10,7 +10,7 @@ class AdministrarExtras
         this.db = db;
     }
 
-    internal void Empezar()
+    public void Empezar()
     {
 
     }

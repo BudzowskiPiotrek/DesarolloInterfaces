@@ -9,8 +9,8 @@ class AdministrarModelos
         this.db = db;
     }
 
-    internal void Empezar()
+    public void Empezar()
     {
-        throw new NotImplementedException();
+
     }
 }
