@@ -20,7 +20,7 @@ class DbConsultas
         using var reader = cmd.ExecuteReader();
         while (reader.Read())
         {
-            lista.Add(new Modelo
+            lista.Add(new Modelo // con Object Initializers
             {
                 IdReal = reader.GetInt32("id_real"),
                 IdLogico = reader.GetInt32("id_logico"),
