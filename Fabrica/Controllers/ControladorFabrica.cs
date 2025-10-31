@@ -17,8 +17,7 @@ class ControladorFabrica
         while (ejecutado)
         {
             vista.mostrarMenu();
-            ejecutado = DespacharAccion(Console.ReadLine()); 
-            
+            ejecutado = DespacharAccion(Console.ReadLine());
         }
     }
 
