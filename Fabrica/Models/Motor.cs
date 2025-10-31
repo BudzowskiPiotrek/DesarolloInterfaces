@@ -1,7 +1,8 @@
 class Motor
 {
-    public int IdReal { get; set; }
-    public string Serie { get; set; }
-    public string Tipo { get; set; }
-    public bool Disponible { get; set; }
+    public string NumSerie { get; set; } = string.Empty; 
+    public int MotorTipoId { get; set; } 
+    public DateTime FechaFabricacion { get; set; }
+    public decimal PotenciaKW { get; set; }
+    public decimal? EmisionesWLTP { get; set; }
 }

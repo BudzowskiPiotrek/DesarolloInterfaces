@@ -1,4 +1,6 @@
 using MySql.Data.MySqlClient;
+using System;
+using System.Collections.Generic;
 
 class DbConsultas
 {
@@ -6,298 +8,316 @@ class DbConsultas
 
     public DbConsultas()
     {
-        dbConnection = new DbConnection();
+        dbConnection = new DbConnection(); 
     }
 
-    // MODELOS  #############################################################################################################################
-    public List<Modelo> ObtenerModelos()
+    // MODELOS HONDA #############################################################################################################################
+    public List<ModeloHonda> ObtenerModelos() 
     {
-        var lista = new List<Modelo>();
+        var lista = new List<ModeloHonda>();
         using var conn = dbConnection.GetConnection();
         conn.Open();
-        string sql = "SELECT id_real, id_logico, nombre, descripcion FROM modelos ORDER BY id_logico";
+        string sql = "SELECT Id, nombre, codigo_modelo, segmento FROM ModeloHonda ORDER BY Id";
         using var cmd = new MySqlCommand(sql, conn);
         using var reader = cmd.ExecuteReader();
         while (reader.Read())
         {
-            lista.Add(new Modelo // con Object Initializers
+            lista.Add(new ModeloHonda
             {
-                IdReal = reader.GetInt32("id_real"),
-                IdLogico = reader.GetInt32("id_logico"),
+                Id = reader.GetInt32("Id"),
                 Nombre = reader.GetString("nombre"),
-                Descripcion = reader.GetString("descripcion")
+                CodigoModelo = reader.GetString("codigo_modelo"), // Corregido: CodigoModelo
+                Segmento = reader.IsDBNull(reader.GetOrdinal("segmento")) ? null : reader.GetString("segmento")
             });
         }
         return lista;
     }
-    public void InsertarModelo(Modelo m)
+
+    public void InsertarModelo(ModeloHonda m) 
     {
         using var conn = dbConnection.GetConnection();
         conn.Open();
-        string sql = "INSERT INTO modelos (id_logico, nombre, descripcion) VALUES (@id_logico, @nombre, @descripcion)";
+        string sql = "INSERT INTO ModeloHonda (nombre, codigo_modelo, segmento) VALUES (@nombre, @codigo_modelo, @segmento)";
         using var cmd = new MySqlCommand(sql, conn);
-        cmd.Parameters.AddWithValue("@id_logico", m.IdLogico);
-        cmd.Parameters.AddWithValue("@nombre", m.Nombre);
-        cmd.Parameters.AddWithValue("@descripcion", m.Descripcion);
+        cmd.Parameters.AddWithValue("@nombre", m.Nombre); // Corregido: Nombre
+        cmd.Parameters.AddWithValue("@codigo_modelo", m.CodigoModelo); // Corregido: CodigoModelo
+        cmd.Parameters.AddWithValue("@segmento", (object)m.Segmento ?? DBNull.Value); 
         cmd.ExecuteNonQuery();
     }
 
-    public void ActualizarModelo(Modelo m)
+    public void ActualizarModelo(ModeloHonda m) 
     {
         using var conn = dbConnection.GetConnection();
         conn.Open();
-        string sql = "UPDATE modelos SET nombre=@nombre, descripcion=@descripcion WHERE id_logico=@id_logico";
+        string sql = "UPDATE ModeloHonda SET nombre=@nombre, codigo_modelo=@codigo_modelo, segmento=@segmento WHERE Id=@Id";
         using var cmd = new MySqlCommand(sql, conn);
-        cmd.Parameters.AddWithValue("@id_logico", m.IdLogico);
-        cmd.Parameters.AddWithValue("@nombre", m.Nombre);
-        cmd.Parameters.AddWithValue("@descripcion", m.Descripcion);
+        cmd.Parameters.AddWithValue("@Id", m.Id);
+        cmd.Parameters.AddWithValue("@nombre", m.Nombre); // Corregido: Nombre
+        cmd.Parameters.AddWithValue("@codigo_modelo", m.CodigoModelo); // Corregido: CodigoModelo
+        cmd.Parameters.AddWithValue("@segmento", (object)m.Segmento ?? DBNull.Value);
         cmd.ExecuteNonQuery();
     }
 
     // COLORES #############################################################################################################################
-
-    public List<ColorCoche> ObtenerColores()
+    public List<Color> ObtenerColores() 
     {
-        var lista = new List<ColorCoche>();
+        var lista = new List<Color>();
         using var conn = dbConnection.GetConnection();
         conn.Open();
-        string sql = "SELECT id_real, id_logico, nombre, codigo FROM colores ORDER BY id_logico";
+        string sql = "SELECT Id, nombre, codigo_pintura, acabado FROM Color ORDER BY Id";
         using var cmd = new MySqlCommand(sql, conn);
         using var reader = cmd.ExecuteReader();
         while (reader.Read())
         {
-            lista.Add(new ColorCoche
+            lista.Add(new Color
             {
-                IdReal = reader.GetInt32("id_real"),
-                IdLogico = reader.GetInt32("id_logico"),
-                Nombre = reader.GetString("nombre"),
-                Codigo = reader.GetString("codigo")
+                Id = reader.GetInt32("Id"),
+                Nombre = reader.GetString("nombre"), // Corregido: Nombre
+                CodigoPintura = reader.GetString("codigo_pintura"), // Corregido: CodigoPintura
+                Acabado = reader.GetString("acabado") // Corregido: Acabado
             });
         }
         return lista;
     }
 
-    public void InsertarColor(ColorCoche c)
+    public void InsertarColor(Color c) 
     {
         using var conn = dbConnection.GetConnection();
         conn.Open();
-        string sql = "INSERT INTO colores (id_logico, nombre, codigo) VALUES (@id_logico, @nombre, @codigo)";
+        string sql = "INSERT INTO Color (nombre, codigo_pintura, acabado) VALUES (@nombre, @codigo_pintura, @acabado)";
         using var cmd = new MySqlCommand(sql, conn);
-        cmd.Parameters.AddWithValue("@id_logico", c.IdLogico);
-        cmd.Parameters.AddWithValue("@nombre", c.Nombre);
-        cmd.Parameters.AddWithValue("@codigo", c.Codigo);
+        cmd.Parameters.AddWithValue("@nombre", c.Nombre); // Corregido: Nombre
+        cmd.Parameters.AddWithValue("@codigo_pintura", c.CodigoPintura); // Corregido: CodigoPintura
+        cmd.Parameters.AddWithValue("@acabado", c.Acabado); // Corregido: Acabado
         cmd.ExecuteNonQuery();
     }
 
-    public void ActualizarColor(ColorCoche c)
+    public void ActualizarColor(Color c) 
     {
         using var conn = dbConnection.GetConnection();
         conn.Open();
-        string sql = "UPDATE colores SET nombre=@nombre, codigo=@codigo WHERE id_logico=@id_logico";
+        string sql = "UPDATE Color SET nombre=@nombre, codigo_pintura=@codigo_pintura, acabado=@acabado WHERE Id=@Id";
         using var cmd = new MySqlCommand(sql, conn);
-        cmd.Parameters.AddWithValue("@id_logico", c.IdLogico);
-        cmd.Parameters.AddWithValue("@nombre", c.Nombre);
-        cmd.Parameters.AddWithValue("@codigo", c.Codigo);
+        cmd.Parameters.AddWithValue("@Id", c.Id);
+        cmd.Parameters.AddWithValue("@nombre", c.Nombre); // Corregido: Nombre
+        cmd.Parameters.AddWithValue("@codigo_pintura", c.CodigoPintura); // Corregido: CodigoPintura
+        cmd.Parameters.AddWithValue("@acabado", c.Acabado); // Corregido: Acabado
         cmd.ExecuteNonQuery();
     }
 
     // PAQUETES EXTRAS #############################################################################################################################
-
-    public List<PaqueteExtra> ObtenerPaquetes()
+    public List<PaqueteExtras> ObtenerPaquetes() 
     {
-        var lista = new List<PaqueteExtra>();
+        var lista = new List<PaqueteExtras>();
         using var conn = dbConnection.GetConnection();
         conn.Open();
-        string sql = "SELECT id_real, id_logico, nombre, descripcion FROM paquetes ORDER BY id_logico";
+        string sql = "SELECT Id, nombre, descripcion FROM PaqueteExtras ORDER BY Id";
         using var cmd = new MySqlCommand(sql, conn);
         using var reader = cmd.ExecuteReader();
         while (reader.Read())
         {
-            lista.Add(new PaqueteExtra
+            lista.Add(new PaqueteExtras
             {
-                IdReal = reader.GetInt32("id_real"),
-                IdLogico = reader.GetInt32("id_logico"),
-                Nombre = reader.GetString("nombre"),
-                Descripcion = reader.GetString("descripcion")
+                Id = reader.GetInt32("Id"),
+                Nombre = reader.GetString("nombre"), // Corregido: Nombre
+                Descripcion = reader.IsDBNull(reader.GetOrdinal("descripcion")) ? null : reader.GetString("descripcion") // Corregido: Descripcion
             });
         }
         return lista;
     }
 
-    public void InsertarPaquete(PaqueteExtra p)
+    public void InsertarPaquete(PaqueteExtras p) 
     {
         using var conn = dbConnection.GetConnection();
         conn.Open();
-        string sql = "INSERT INTO paquetes (id_logico, nombre, descripcion) VALUES (@id_logico, @nombre, @descripcion)";
+        string sql = "INSERT INTO PaqueteExtras (nombre, descripcion) VALUES (@nombre, @descripcion)";
         using var cmd = new MySqlCommand(sql, conn);
-        cmd.Parameters.AddWithValue("@id_logico", p.IdLogico);
-        cmd.Parameters.AddWithValue("@nombre", p.Nombre);
-        cmd.Parameters.AddWithValue("@descripcion", p.Descripcion);
+        cmd.Parameters.AddWithValue("@nombre", p.Nombre); // Corregido: Nombre
+        cmd.Parameters.AddWithValue("@descripcion", (object)p.Descripcion ?? DBNull.Value); // Corregido: Descripcion
         cmd.ExecuteNonQuery();
     }
 
-    public void ActualizarPaquete(PaqueteExtra p)
+    public void ActualizarPaquete(PaqueteExtras p) 
     {
         using var conn = dbConnection.GetConnection();
         conn.Open();
-        string sql = "UPDATE paquetes SET nombre=@nombre, descripcion=@descripcion WHERE id_logico=@id_logico";
+        string sql = "UPDATE PaqueteExtras SET nombre=@nombre, descripcion=@descripcion WHERE Id=@Id";
         using var cmd = new MySqlCommand(sql, conn);
-        cmd.Parameters.AddWithValue("@id_logico", p.IdLogico);
-        cmd.Parameters.AddWithValue("@nombre", p.Nombre);
-        cmd.Parameters.AddWithValue("@descripcion", p.Descripcion);
+        cmd.Parameters.AddWithValue("@Id", p.Id);
+        cmd.Parameters.AddWithValue("@nombre", p.Nombre); // Corregido: Nombre
+        cmd.Parameters.AddWithValue("@descripcion", (object)p.Descripcion ?? DBNull.Value); // Corregido: Descripcion
         cmd.ExecuteNonQuery();
     }
 
     // MOTORES #############################################################################################################################
-
-    public List<Motor> ObtenerMotores()
+    public List<Motor> ObtenerMotores() 
     {
         var lista = new List<Motor>();
         using var conn = dbConnection.GetConnection();
         conn.Open();
-        string sql = "SELECT id_real, serie, tipo, disponible FROM motores ORDER BY serie";
+        string sql = "SELECT num_serie, motor_tipo_id, fecha_fabricacion, potencia_kw, emisiones_wltp FROM Motor ORDER BY num_serie";
         using var cmd = new MySqlCommand(sql, conn);
         using var reader = cmd.ExecuteReader();
         while (reader.Read())
         {
             lista.Add(new Motor
             {
-                IdReal = reader.GetInt32("id_real"),
-                Serie = reader.GetString("serie"),
-                Tipo = reader.GetString("tipo"),
-                Disponible = reader.GetBoolean("disponible")
+                NumSerie = reader.GetString("num_serie"), // Corregido: NumSerie
+                MotorTipoId = reader.GetInt32("motor_tipo_id"), // Corregido: MotorTipoId
+                FechaFabricacion = reader.GetDateTime("fecha_fabricacion"), // Corregido: FechaFabricacion
+                PotenciaKW = reader.GetDecimal("potencia_kw"), // Corregido: PotenciaKW
+                EmisionesWLTP = reader.IsDBNull(reader.GetOrdinal("emisiones_wltp")) ? (decimal?)null : reader.GetDecimal("emisiones_wltp") // Corregido: EmisionesWLTP
             });
         }
         return lista;
     }
 
-    public void InsertarMotor(Motor m)
+    public void InsertarMotor(Motor m) 
     {
         using var conn = dbConnection.GetConnection();
         conn.Open();
-        string sql = "INSERT INTO motores (serie, tipo, disponible) VALUES (@serie, @tipo, @disponible)";
+        string sql = "INSERT INTO Motor (num_serie, motor_tipo_id, fecha_fabricacion, potencia_kw, emisiones_wltp) " +
+                     "VALUES (@num_serie, @motor_tipo_id, @fecha_fabricacion, @potencia_kw, @emisiones_wltp)";
         using var cmd = new MySqlCommand(sql, conn);
-        cmd.Parameters.AddWithValue("@serie", m.Serie);
-        cmd.Parameters.AddWithValue("@tipo", m.Tipo);
-        cmd.Parameters.AddWithValue("@disponible", m.Disponible);
+        cmd.Parameters.AddWithValue("@num_serie", m.NumSerie); // Corregido: NumSerie
+        cmd.Parameters.AddWithValue("@motor_tipo_id", m.MotorTipoId); // Corregido: MotorTipoId
+        cmd.Parameters.AddWithValue("@fecha_fabricacion", m.FechaFabricacion); // Corregido: FechaFabricacion
+        cmd.Parameters.AddWithValue("@potencia_kw", m.PotenciaKW); // Corregido: PotenciaKW
+        cmd.Parameters.AddWithValue("@emisiones_wltp", (object)m.EmisionesWLTP ?? DBNull.Value); // Corregido: EmisionesWLTP
         cmd.ExecuteNonQuery();
     }
 
-    public void ActualizarMotorDisponibilidad(string serie, bool disponible)
+    // NUEVO: Tipo de Motor #############################################################################################################################
+    
+    public List<MotorTipo> ObtenerTiposMotor() 
     {
+        var lista = new List<MotorTipo>();
         using var conn = dbConnection.GetConnection();
         conn.Open();
-        string sql = "UPDATE motores SET disponible=@disponible WHERE serie=@serie";
+        string sql = "SELECT Id, codigo, descripcion, cilindrada_cc, alimentacion FROM MotorTipo ORDER BY Id";
         using var cmd = new MySqlCommand(sql, conn);
-        cmd.Parameters.AddWithValue("@serie", serie);
-        cmd.Parameters.AddWithValue("@disponible", disponible);
-        cmd.ExecuteNonQuery();
+        using var reader = cmd.ExecuteReader();
+        while (reader.Read())
+        {
+            lista.Add(new MotorTipo
+            {
+                Id = reader.GetInt32("Id"),
+                Codigo = reader.GetString("codigo"), // Corregido: Codigo
+                Descripcion = reader.IsDBNull(reader.GetOrdinal("descripcion")) ? null : reader.GetString("descripcion"), // Corregido: Descripcion
+                CilindradaCC = reader.GetInt32("cilindrada_cc"), // Corregido: CilindradaCC
+                Alimentacion = reader.GetString("alimentacion") // Corregido: Alimentacion
+            });
+        }
+        return lista;
     }
+
 
     // COCHES #############################################################################################################################
-
-    public List<Coche> ObtenerCoches()
+    public List<Coche> ObtenerCoches() 
     {
         var lista = new List<Coche>();
         using var conn = dbConnection.GetConnection();
         conn.Open();
         string sql = @"
-                SELECT c.id_real, c.id_logico, c.vin, m.nombre AS modelo, co.nombre AS color, p.nombre AS paquete, c.motor_serie, c.observaciones
-                    FROM coches c
-                    LEFT JOIN modelos m   ON c.modelo_id   = m.id_real
-                    LEFT JOIN colores co  ON c.color_id    = co.id_real
-                    LEFT JOIN paquetes p  ON c.paquete_id  = p.id_real
-                ORDER BY c.id_logico";
+            SELECT c.vin, m.nombre AS modelo, co.nombre AS color, p.nombre AS paquete, 
+                   c.motor_serie, c.observaciones, c.fecha_fabricacion
+            FROM Coche c
+            LEFT JOIN ModeloHonda m   ON c.modelo_id   = m.Id
+            LEFT JOIN Color co  ON c.color_id    = co.Id
+            LEFT JOIN PaqueteExtras p  ON c.paquete_id  = p.Id
+            ORDER BY c.vin"; 
+            
         using var cmd = new MySqlCommand(sql, conn);
         using var reader = cmd.ExecuteReader();
         while (reader.Read())
         {
             lista.Add(new Coche
             {
-                IdReal = reader.GetInt32("id_real"),
-                IdLogico = reader.GetInt32("id_logico"),
                 VIN = reader.GetString("vin"),
                 ModeloNombre = reader["modelo"]?.ToString(),
                 ColorNombre = reader["color"]?.ToString(),
                 PaqueteNombre = reader["paquete"]?.ToString(),
-                MotorSerie = reader["motor_serie"]?.ToString(),
-                Observaciones = reader["observaciones"]?.ToString()
+                MotorSerie = reader["motor_serie"]?.ToString(), // Corregido: MotorSerie
+                Observaciones = reader["observaciones"]?.ToString(), // Corregido: Observaciones
+                FechaFabricacion = reader.GetDateTime("fecha_fabricacion") // Corregido: FechaFabricacion
             });
         }
         return lista;
     }
 
-    public void InsertarCoche(Coche c)
+    public void InsertarCoche(Coche c) 
     {
         using var conn = dbConnection.GetConnection();
         conn.Open();
-        string sql = "INSERT INTO coches (id_logico, vin, modelo_id) VALUES (@id_logico, @vin, @modelo_id)";
+        string sql = "INSERT INTO Coche (vin, modelo_id, color_id, motor_serie, paquete_id, fecha_fabricacion, observaciones) " +
+                     "VALUES (@vin, @modelo_id, @color_id, @motor_serie, @paquete_id, @fecha_fabricacion, @observaciones)";
         using var cmd = new MySqlCommand(sql, conn);
-        cmd.Parameters.AddWithValue("@id_logico", c.IdLogico);
         cmd.Parameters.AddWithValue("@vin", c.VIN);
-        cmd.Parameters.AddWithValue("@modelo_id", c.ModeloId);
+        cmd.Parameters.AddWithValue("@modelo_id", c.ModeloId); // Corregido: ModeloId
+        cmd.Parameters.AddWithValue("@color_id", (object)c.ColorId ?? DBNull.Value); // Corregido: ColorId
+        cmd.Parameters.AddWithValue("@motor_serie", (object)c.MotorSerie ?? DBNull.Value); // Corregido: MotorSerie
+        cmd.Parameters.AddWithValue("@paquete_id", (object)c.PaqueteId ?? DBNull.Value); // Corregido: PaqueteId
+        cmd.Parameters.AddWithValue("@fecha_fabricacion", c.FechaFabricacion); // Corregido: FechaFabricacion
+        cmd.Parameters.AddWithValue("@observaciones", (object)c.Observaciones ?? DBNull.Value); // Corregido: Observaciones
         cmd.ExecuteNonQuery();
     }
 
-    public void ActualizarCoche(Coche c)
+    public void ActualizarCoche(Coche c) 
     {
         using var conn = dbConnection.GetConnection();
         conn.Open();
         string sql = @"
-                UPDATE coches
-                    SET vin        = @vin,
-                        modelo_id  = @modelo_id,
-                        color_id   = @color_id,
+                UPDATE Coche
+                    SET modelo_id  = @modelo_id,
+                        color_id   = @color_id,
                         paquete_id = @paquete_id,
                         motor_serie= @motor_serie,
+                        fecha_fabricacion = @fecha_fabricacion,
                         observaciones = @observaciones
-                WHERE id_logico = @id_logico";
+                WHERE vin = @vin"; 
         using var cmd = new MySqlCommand(sql, conn);
-        cmd.Parameters.AddWithValue("@id_logico", c.IdLogico);
         cmd.Parameters.AddWithValue("@vin", c.VIN);
-        cmd.Parameters.AddWithValue("@modelo_id", c.ModeloId);
-        cmd.Parameters.AddWithValue("@color_id", (object)c.ColorId ?? DBNull.Value);
-        cmd.Parameters.AddWithValue("@paquete_id", (object)c.PaqueteId ?? DBNull.Value);
-        cmd.Parameters.AddWithValue("@motor_serie", (object)c.MotorSerie ?? DBNull.Value);
-        cmd.Parameters.AddWithValue("@observaciones", (object)c.Observaciones ?? DBNull.Value);
+        cmd.Parameters.AddWithValue("@modelo_id", c.ModeloId); // Corregido: ModeloId
+        cmd.Parameters.AddWithValue("@color_id", (object)c.ColorId ?? DBNull.Value); // Corregido: ColorId
+        cmd.Parameters.AddWithValue("@paquete_id", (object)c.PaqueteId ?? DBNull.Value); // Corregido: PaqueteId
+        cmd.Parameters.AddWithValue("@motor_serie", (object)c.MotorSerie ?? DBNull.Value); // Corregido: MotorSerie
+        cmd.Parameters.AddWithValue("@fecha_fabricacion", c.FechaFabricacion); // Corregido: FechaFabricacion
+        cmd.Parameters.AddWithValue("@observaciones", (object)c.Observaciones ?? DBNull.Value); // Corregido: Observaciones
         cmd.ExecuteNonQuery();
     }
 
-    public void CambiarColorCoche(int idLogico, int nuevoColorId)
+    public void CambiarColorCoche(string vin, int nuevoColorId) 
     {
         using var conn = dbConnection.GetConnection();
         conn.Open();
-        string sql = "UPDATE coches SET color_id=@color_id WHERE id_logico=@id_logico";
+        string sql = "UPDATE Coche SET color_id=@color_id WHERE vin=@vin";
         using var cmd = new MySqlCommand(sql, conn);
-        cmd.Parameters.AddWithValue("@id_logico", idLogico);
+        cmd.Parameters.AddWithValue("@vin", vin);
         cmd.Parameters.AddWithValue("@color_id", nuevoColorId);
         cmd.ExecuteNonQuery();
     }
 
-    public void CambiarPaqueteCoche(int idLogico, int nuevoPaqueteId)
+    public void CambiarPaqueteCoche(string vin, int nuevoPaqueteId) 
     {
         using var conn = dbConnection.GetConnection();
         conn.Open();
-        string sql = "UPDATE coches SET paquete_id=@paquete_id WHERE id_logico=@id_logico";
+        string sql = "UPDATE Coche SET paquete_id=@paquete_id WHERE vin=@vin";
         using var cmd = new MySqlCommand(sql, conn);
-        cmd.Parameters.AddWithValue("@id_logico", idLogico);
+        cmd.Parameters.AddWithValue("@vin", vin);
         cmd.Parameters.AddWithValue("@paquete_id", nuevoPaqueteId);
         cmd.ExecuteNonQuery();
     }
 
-    public void AsignarMotorCoche(int idLogico, string motorSerie)
+    public void AsignarMotorCoche(string vin, string motorSerie) 
     {
         using var conn = dbConnection.GetConnection();
         conn.Open();
-        string sql = "UPDATE coches SET motor_serie=@motor_serie WHERE id_logico=@id_logico";
+        string sql = "UPDATE Coche SET motor_serie=@motor_serie WHERE vin=@vin";
         using var cmd = new MySqlCommand(sql, conn);
-        cmd.Parameters.AddWithValue("@id_logico", idLogico);
+        cmd.Parameters.AddWithValue("@vin", vin);
         cmd.Parameters.AddWithValue("@motor_serie", motorSerie);
         cmd.ExecuteNonQuery();
 
-        string sql2 = "UPDATE motores SET disponible=0 WHERE serie=@motor_serie";
-        using var cmd2 = new MySqlCommand(sql2, conn);
-        cmd2.Parameters.AddWithValue("@motor_serie", motorSerie);
-        cmd2.ExecuteNonQuery();
+        // Código de actualización de Motor/disponibilidad eliminado como se comentó antes.
     }
 }

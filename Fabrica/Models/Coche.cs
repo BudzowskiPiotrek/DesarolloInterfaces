@@ -1,38 +1,40 @@
 class Coche
 {
-    public int IdReal { get; set; }
-    public int IdLogico { get; set; }
-    public string VIN { get; set; }
+    public string VIN { get; set; } = string.Empty;
     public int ModeloId { get; set; }
-    public int? ColorId { get; set; }
+    public int ColorId { get; set; }
+    public string MotorSerie { get; set; } = string.Empty;
     public int? PaqueteId { get; set; }
-    public string? MotorSerie { get; set; }
+    public DateTime FechaFabricacion { get; set; }
     public string? Observaciones { get; set; }
 
-    // solo para leer
-
+    // solo para leer (Propiedades de navegación o JOINs)
     public string? ModeloNombre { get; set; }
     public string? ColorNombre { get; set; }
     public string? PaqueteNombre { get; set; }
 
+    // 1. Constructor Vacío
     public Coche() { }
-    public Coche(int idLogico, string vin, int modeloId)
+
+    // 2. Constructor Mínimo (Campos NOT NULL)
+    public Coche(string vin, int modeloId, int colorId, string motorSerie, DateTime fechaFabricacion)
     {
-        IdLogico = idLogico;
-        VIN = vin;
-        ModeloId = modeloId;
-    }
-    public Coche(int idReal, int idLogico, string vin, int modeloId, int? colorId, int? paqueteId, string? motorSerie, string? observaciones)
-    {
-        IdReal = idReal;
-        IdLogico = idLogico;
         VIN = vin;
         ModeloId = modeloId;
         ColorId = colorId;
-        PaqueteId = paqueteId;
         MotorSerie = motorSerie;
-        Observaciones = observaciones;
+        FechaFabricacion = fechaFabricacion;
     }
 
-
+    // 3. Constructor Completo
+    public Coche(string vin, int modeloId, int colorId, string motorSerie, DateTime fechaFabricacion, int? paqueteId, string? observaciones)
+    {
+        VIN = vin;
+        ModeloId = modeloId;
+        ColorId = colorId;
+        MotorSerie = motorSerie;
+        FechaFabricacion = fechaFabricacion;
+        PaqueteId = paqueteId;
+        Observaciones = observaciones;
+    }
 }

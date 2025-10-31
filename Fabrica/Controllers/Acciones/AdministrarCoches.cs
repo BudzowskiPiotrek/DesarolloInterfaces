@@ -1,4 +1,6 @@
 
+using System.ComponentModel.DataAnnotations;
+
 class AdministrarCoches
 {
     private VistaFabrica vista;
@@ -12,6 +14,15 @@ class AdministrarCoches
 
     public void Empezar()
     {
-
+        Coche nuevoCoche = new Coche(
+        vin: "CristobalMobail",            // VIN único (string)
+        modeloId: 1,                       // FK a ModeloHonda (int)
+        colorId: 5,                        // FK a Color (int)
+        motorSerie: "MTR-123456",          // FK a Motor (string)
+        fechaFabricacion: DateTime.Now.Date // Fecha (DateTime)
+    );
+        
+            db.InsertarCoche(nuevoCoche);
+        
     }
 }
