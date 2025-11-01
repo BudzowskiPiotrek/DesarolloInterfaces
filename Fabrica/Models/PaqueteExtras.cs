@@ -1,6 +1,6 @@
 class PaqueteExtras
 {
-    public int Id { get; set; }
-    public string Nombre { get; set; } = string.Empty;
-    public string? Descripcion { get; set; } 
+    public int Id { get; set; }                           // NOT NULL (PK)
+    public string Nombre { get; set; } = string.Empty;    // NOT NULL
+    public string? Descripcion { get; set; }              // NULL
 }

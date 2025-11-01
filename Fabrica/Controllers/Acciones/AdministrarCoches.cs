@@ -13,16 +13,14 @@ class AdministrarCoches
     }
 
     public void Empezar()
-    {
-        Coche nuevoCoche = new Coche(
-        vin: "CristobalMobail",            // VIN único (string)
-        modeloId: 1,                       // FK a ModeloHonda (int)
-        colorId: 5,                        // FK a Color (int)
-        motorSerie: "MTR-123456",          // FK a Motor (string)
-        fechaFabricacion: DateTime.Now.Date // Fecha (DateTime)
+{
+    Coche nuevoCoche = new Coche(
+        vin: "CRISTOBAL-MOBILE",
+        modeloId: 1,
+        colorId: 5,
+        paqueteId: 2
     );
-        
-            db.InsertarCoche(nuevoCoche);
-        
-    }
+
+    db.InsertarCoche(nuevoCoche);
+}
 }
