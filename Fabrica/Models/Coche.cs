@@ -25,7 +25,7 @@ class Coche
         PaqueteId = paqueteId;
     }
 
-    // 3. Constructor Completo
+    // 3. Constructor Para leer datos
     public Coche(
         string vin, string? modeloNombre, string? colorNombre, string? paqueteNombre, string? motorSerie, DateTime? fechaFabricacion, string? observaciones)
     {
@@ -37,4 +37,5 @@ class Coche
         FechaFabricacion = fechaFabricacion;
         Observaciones = observaciones;
     }
+
 }

@@ -26,8 +26,9 @@ class AdministrarModelos
             case "1":   // LISTAR
                 
                 return true;
-            case "2":   // AÑADIR
-                
+            case "2":   // AÑADIR TEST
+                ModeloHonda nuevoModelo = new ModeloHonda("V-TURBO");
+                db.InsertarModelo(nuevoModelo);
                 return true;
             case "3":   // EDITAR
                 

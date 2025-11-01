@@ -27,16 +27,24 @@ public void Empezar()
         switch (opcion)
         {
             case "1":   // LISTAR
-                
+                List<Coche> coches = db.ObtenerCoches();
+                foreach (var c in coches)
+                {   
+                    Console.WriteLine("----------------------------");
+                    Console.WriteLine($"VIN    : {c.VIN}");
+                    Console.WriteLine($"Modelo : {c.ModeloNombre}");
+                    Console.WriteLine($"Color  : {c.ColorNombre}");
+                    Console.WriteLine($"Paquete: {c.PaqueteNombre}");
+                }
                 return true;
-            case "2":   // AÑADIR
-            Coche nuevoCoche = new Coche(
-                vin: "CRISTOBAL-MOBILE",
-                modeloId: 1,
-                colorId: 5,
-                paqueteId: 2
-            );
-            db.InsertarCoche(nuevoCoche);
+            case "2":   // AÑADIR TEST
+                Coche nuevoCoche = new Coche(
+                    vin: "CRISTOBAL-MOBILE",
+                    modeloId: 1,
+                    colorId: 5,
+                    paqueteId: 2
+                );
+                db.InsertarCoche(nuevoCoche);
                 return true;
             case "3":   // EDITAR
                 
