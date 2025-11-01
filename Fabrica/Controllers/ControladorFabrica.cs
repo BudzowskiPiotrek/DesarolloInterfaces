@@ -17,11 +17,11 @@ class ControladorFabrica
         while (ejecutado)
         {
             vista.mostrarMenu();
-            ejecutado = DespacharAccion(Console.ReadLine());
+            ejecutado = menuSwitch(Console.ReadLine());
         }
     }
 
-    private bool DespacharAccion(string opcion)
+    private bool menuSwitch(string opcion)
     {
         switch (opcion)
         {

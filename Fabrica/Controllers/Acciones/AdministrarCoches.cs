@@ -5,6 +5,7 @@ class AdministrarCoches
 {
     private VistaFabrica vista;
     private DbConsultas db;
+    private bool ejecutado = true;
 
     public AdministrarCoches(VistaFabrica vista, DbConsultas db)
     {
@@ -12,15 +13,39 @@ class AdministrarCoches
         this.db = db;
     }
 
-    public void Empezar()
-{
-    Coche nuevoCoche = new Coche(
-        vin: "CRISTOBAL-MOBILE",
-        modeloId: 1,
-        colorId: 5,
-        paqueteId: 2
-    );
+public void Empezar()
+    {
+        while (ejecutado)
+        {
+            // IMPRIMIR MENU
+            ejecutado = menuCoches(Console.ReadLine());
+        }
+    }
 
-    db.InsertarCoche(nuevoCoche);
-}
+    private bool menuCoches(string opcion)
+    {
+        switch (opcion)
+        {
+            case "1":   // LISTAR
+                
+                return true;
+            case "2":   // AÑADIR
+            Coche nuevoCoche = new Coche(
+                vin: "CRISTOBAL-MOBILE",
+                modeloId: 1,
+                colorId: 5,
+                paqueteId: 2
+            );
+            db.InsertarCoche(nuevoCoche);
+                return true;
+            case "3":   // EDITAR
+                
+                return true;
+            case "0":   // SALIR
+                return false;
+            default:
+                vista.mostrarError(0);
+                return true;
+        }
+    }  
 }
