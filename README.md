@@ -70,4 +70,4 @@ Para abrir y ejecutar cualquiera de los proyectos, necesitas **Visual Studio** (
 
 Desarrollado por [BudzowskiPiotrek](https://github.com/BudzowskiPiotrek) como parte de mi formación en DAM.
 
-
+¡Cualquier sugerencia o pull request es bienvenida!
