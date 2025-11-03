@@ -25,14 +25,13 @@ class AdministrarModelos
         switch (opcion)
         {
             case "1":   // LISTAR
-                
+                listas();
                 return true;
-            case "2":   // AÑADIR TEST
-                ModeloHonda nuevoModelo = new ModeloHonda("V-TURBO");
-                db.InsertarModelo(nuevoModelo);
+            case "2":   // AÑADIR
+                anadir();
                 return true;
             case "3":   // EDITAR
-                
+                editar();
                 return true;
             case "0":   // SALIR
                 return false;
@@ -40,5 +39,12 @@ class AdministrarModelos
                 vista.mostrarError(0);
                 return true;
         }
-    }  
+    }
+    public void listas() { }
+    public void anadir()
+    {
+        ModeloHonda nuevoModelo = new ModeloHonda("V-TURBO");
+        db.InsertarModelo(nuevoModelo);
+    }
+    public void editar() { }
 }

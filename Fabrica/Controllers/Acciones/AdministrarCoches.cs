@@ -28,36 +28,22 @@ class AdministrarCoches
         switch (opcion)
         {
             case "1":   // LISTAR
-                List<Coche> coches = db.ObtenerCoches();
-                foreach (var c in coches)
-                {
-                    Console.WriteLine("----------------------------");
-                    Console.WriteLine($"VIN    : {c.VIN}");
-                    Console.WriteLine($"Modelo : {c.ModeloNombre}");
-                    Console.WriteLine($"Color  : {c.ColorNombre}");
-                    Console.WriteLine($"Paquete: {c.PaqueteNombre}");
-                }
+                listas();
                 return true;
-            case "2":   // AÑADIR TEST
-                Coche nuevoCoche = new Coche(
-                    vin: "CRISTOBAL-MOBILE",
-                    modeloId: 1,
-                    colorId: 5,
-                    paqueteId: 2
-                );
-                db.InsertarCoche(nuevoCoche);
+            case "2":   // AÑADIR
+                anadir();
                 return true;
             case "3":   // EDITAR POR ID LOGICO
-
+                editar();
                 return true;
             case "4":   // ASIGNAR MODIFICAR MOTOR
-
+                motor();
                 return true;
             case "5":   // CAMBIAR PAQUETE EXTRA
-
+                extra();
                 return true;
             case "6":   // CAMBIAR COLOR
-
+                color();
                 return true;
             case "0":   // SALIR
                 return false;
@@ -66,4 +52,30 @@ class AdministrarCoches
                 return true;
         }
     }
+    public void listas()
+    {
+        List<Coche> coches = db.ObtenerCoches();
+        foreach (var c in coches)
+        {
+            Console.WriteLine("----------------------------");
+            Console.WriteLine($"VIN    : {c.VIN}");
+            Console.WriteLine($"Modelo : {c.ModeloNombre}");
+            Console.WriteLine($"Color  : {c.ColorNombre}");
+            Console.WriteLine($"Paquete: {c.PaqueteNombre}");
+        }
+    }
+    public void anadir()
+    {
+        Coche nuevoCoche = new Coche(
+                    vin: "CRISTOBAL-MOBILE",
+                    modeloId: 1,
+                    colorId: 5,
+                    paqueteId: 2
+                );
+                db.InsertarCoche(nuevoCoche);
+    }
+    public void editar() { }
+    public void motor() { }
+    public void extra() { }
+    public void color() { }
 }
