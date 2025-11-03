@@ -16,7 +16,7 @@ class ControladorFabrica
     {
         while (ejecutado)
         {
-            vista.mostrarMenu();
+            vista.mostrarMenuPrincipal();
             ejecutado = menuSwitch(Console.ReadLine());
         }
     }

@@ -15,7 +15,8 @@ class AdministrarColores
     {
         while (ejecutado)
         {
-            // IMPRIMIR MENU
+            Console.WriteLine(vista.mensajesControl[10]);
+            vista.mostrarMenuComun();
             ejecutado = menuColores(Console.ReadLine());
         }
     }

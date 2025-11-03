@@ -15,7 +15,8 @@ class AdministrarExtras
     {
         while (ejecutado)
         {
-            // IMPRIMIR MENU
+            Console.WriteLine(vista.mensajesControl[9]);
+            vista.mostrarMenuComun();
             ejecutado = menuExtras(Console.ReadLine());
         }
     }

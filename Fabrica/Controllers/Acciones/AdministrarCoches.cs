@@ -13,11 +13,12 @@ class AdministrarCoches
         this.db = db;
     }
 
-public void Empezar()
+    public void Empezar()
     {
         while (ejecutado)
         {
-            // IMPRIMIR MENU
+            Console.WriteLine(vista.mensajesControl[7]);
+            vista.mostrarMenuCoche();
             ejecutado = menuCoches(Console.ReadLine());
         }
     }
@@ -29,7 +30,7 @@ public void Empezar()
             case "1":   // LISTAR
                 List<Coche> coches = db.ObtenerCoches();
                 foreach (var c in coches)
-                {   
+                {
                     Console.WriteLine("----------------------------");
                     Console.WriteLine($"VIN    : {c.VIN}");
                     Console.WriteLine($"Modelo : {c.ModeloNombre}");
@@ -46,8 +47,17 @@ public void Empezar()
                 );
                 db.InsertarCoche(nuevoCoche);
                 return true;
-            case "3":   // EDITAR
-                
+            case "3":   // EDITAR POR ID LOGICO
+
+                return true;
+            case "4":   // ASIGNAR MODIFICAR MOTOR
+
+                return true;
+            case "5":   // CAMBIAR PAQUETE EXTRA
+
+                return true;
+            case "6":   // CAMBIAR COLOR
+
                 return true;
             case "0":   // SALIR
                 return false;
@@ -55,5 +65,5 @@ public void Empezar()
                 vista.mostrarError(0);
                 return true;
         }
-    }  
+    }
 }

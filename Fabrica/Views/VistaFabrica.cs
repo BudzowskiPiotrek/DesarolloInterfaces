@@ -10,20 +10,30 @@ class VistaFabrica
         "4. Administrar Colores",              // [4]
         "0. Salir",                            // [5]
         "** ¿Elige una opcion? **",            // [6]
-        ""                                     // [7]
+        "** FÁBRICA HONDA: MENÚ COCHE **",     // [7] 
+        "** FÁBRICA HONDA: MENÚ MODELO **",    // [8] 
+        "** FÁBRICA HONDA: MENÚ EXTRAS **",    // [9] 
+        "** FÁBRICA HONDA: MENÚ COLOR **",     // [10] 
+        "1. Listar",                           // [11]
+        "2. Añadir",                           // [12]
+        "3. Editar por id_lógico",             // [13]
+        "0. Volver",                           // [14]
+        "3. Editar coche por id_lógico",       // [15]
+        "4. Asignar/Modificar Motor",          // [16]
+        "5. Cambiar Paquete (Extras)",         // [17]
+        "6. Cambiar Color",                    // [18]
     };
 
     private readonly List<string> mensajesError = new List<string>
     {
-        "❌ Opción no válida. Vuelves al menu principal  . ❌",        // [0] 
+        "❌ Opción no válida. Vuelve a intentar. ❌",        // [0] 
     };
 
     private readonly List<string> mensajesConfirmacion = new List<string>
     {
-        "✅ Saliendo de la aplicación.✅",                             // [0] 
+        "✅ Saliendo de la aplicación. ✅",                             // [0] 
     };
-
-    public void mostrarMenu()
+    public void mostrarMenuPrincipal()
     {
         Console.Clear();
         for (int i = 0; i < 7; i++)
@@ -31,6 +41,28 @@ class VistaFabrica
             Console.WriteLine(mensajesControl[i]);
         }
     }
+    public void mostrarMenuComun()
+    {
+        for (int i = 11; i < 15; i++)
+        {
+            Console.WriteLine(mensajesControl[i]);
+        }
+        Console.WriteLine(mensajesControl[6]);
+    }
+    public void mostrarMenuCoche()
+    {
+        for (int i = 11; i < 19; i++)
+        {
+            if (i == 13 || i == 14)
+            {
+                continue;
+            }
+            Console.WriteLine(mensajesControl[i]);
+        }
+        Console.WriteLine(mensajesControl[14]);
+        Console.WriteLine(mensajesControl[6]);
+    }
+    
     public void mostrarConfirmacion(int numero)
     {
         if (numero >= 0 && numero < mensajesConfirmacion.Count)

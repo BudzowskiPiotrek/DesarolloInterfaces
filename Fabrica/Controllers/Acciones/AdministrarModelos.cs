@@ -14,7 +14,8 @@ class AdministrarModelos
     {
         while (ejecutado)
         {
-            // IMPRIMIR MENU
+            Console.WriteLine(vista.mensajesControl[8]);
+            vista.mostrarMenuComun();
             ejecutado = menuModelos(Console.ReadLine());
         }
     }
