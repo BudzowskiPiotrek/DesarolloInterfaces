@@ -22,16 +22,66 @@ class VistaFabrica
         "4. Asignar/Modificar Motor",          // [16]
         "5. Cambiar Paquete (Extras)",         // [17]
         "6. Cambiar Color",                    // [18]
+        "Introduce VIN: ",                     // [19]
+        "Introduce ID de modelo: ",            // [20]
+        "Introduce ID de color: ",             // [21]
+        "Introduce ID de paquete: ",           // [22]
+        "Introduce uno de los modelos disponibles (deja vacío para eliminar): ",  // [23]
+        "Introduce el ID lógico del coche para asignar o cambiar motor: ",        // [24]
+        "Introduce el ID lógico del coche para cambiar el paquete: ",             // [25]
+        "Introduce el ID del paquete que quieres asignar: ",                      // [26]
+        "Introduce el ID lógico del coche para cambiar el color: ",               // [27]
+        "Introduce el ID del color que quieres asignar: ",                        // [28]
+        "Introduce el nombre del modelo: ",                                       // [29]
+        "Introduce el código del modelo (opcional - si no quieres pulsa enter): ",// [30]
+        "Introduce el segmento (opcional - si no quieres pulsa enter): ",         // [31]
+        "Introduce el ID lógico del modelo a editar: ",                           // [32]
+        "Introduce el ID lógico del color a editar: ",                            // [33]
+        "Introduce el nombre del color:",                                         // [34]
+        "Introduce el código de pintura: ",                                       // [35]
+        "Introduce el acabado: ",                                                 // [36]
+        "Introduce el nombre del paquete extra:",                                 // [37]
+        "Introduce la descripción (opcional):",                                   // [38]
+        "Introduce el ID lógico del paquete a editar:",                           // [39]
+        "",                    // [40]
+        "",                    // [41]
     };
 
     private readonly List<string> mensajesError = new List<string>
     {
-        "❌ Opción no válida. Vuelve a intentar. ❌",        // [0] 
+        "❌ Opción no válida. Vuelve a intentar.",           // [0]
+        "❌ El VIN no puede estar vacío.",                   // [1]
+        "❌ ID de modelo no válido.",                        // [2]
+        "❌ ID de color no válido.",                         // [3]
+        "❌ ID de paquete no válido.",                       // [4]
+        "❌ Error al insertar",                              // [5]
+        "❌ Error al actualizar.",                           // [6]
+        "❌ El número de serie no existe.",                  // [7]
+        "❌ No hay motores disponibles actualmente.",        // [8]
+        "❌ Error al actualizar el motor.",                  // [9]
+        "❌ Paquete inválido",                               // [10]
+        "❌ Color inválido.",                                // [11]
+        "❌",                  // [12]
+        "❌",                  // [13]
+        "❌",                  // [14]
+        "❌",                  // [15]
+        "❌",                  // [16]
     };
 
     private readonly List<string> mensajesConfirmacion = new List<string>
     {
-        "✅ Saliendo de la aplicación. ✅",                             // [0] 
+        "✅ Saliendo de la aplicación. ",                              // [0] 
+        "✅ Coche añadido correctamente.",                             // [1]
+        "✅ Motor actualizado correctamente.",                         // [2]
+        "✅ Paquete actualizado correctamente",                        // [3]
+        "✅ Color actualizado correctamente.",                         // [4]
+        "✅ Modelo agregado correctamente",                            // [5]
+        "✅ Modelo actualizado correctamente",                         // [6]
+        "✅ Color agregado correctamente",                             // [7]
+        "✅ Color actualizado correctamente",                          // [8]
+        "✅ Paquete agregado correctamente",                           // [9]
+        "✅ Paquete actualizado correctamente",                        // [10]
+        "✅ ",                          // [11]
     };
     public void mostrarMenuPrincipal()
     {
@@ -62,7 +112,7 @@ class VistaFabrica
         Console.WriteLine(mensajesControl[14]);
         Console.WriteLine(mensajesControl[6]);
     }
-    
+
     public void mostrarConfirmacion(int numero)
     {
         if (numero >= 0 && numero < mensajesConfirmacion.Count)
