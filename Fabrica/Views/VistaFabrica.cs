@@ -43,7 +43,7 @@ class VistaFabrica
         "Introduce el nombre del paquete extra:",                                 // [37]
         "Introduce la descripción (opcional):",                                   // [38]
         "Introduce el ID lógico del paquete a editar:",                           // [39]
-        "",                    // [40]
+        "Introduce el ID lógico del coche",                                       // [40]
         "",                    // [41]
     };
 
@@ -62,10 +62,6 @@ class VistaFabrica
         "❌ Paquete inválido",                               // [10]
         "❌ Color inválido.",                                // [11]
         "❌",                  // [12]
-        "❌",                  // [13]
-        "❌",                  // [14]
-        "❌",                  // [15]
-        "❌",                  // [16]
     };
 
     private readonly List<string> mensajesConfirmacion = new List<string>

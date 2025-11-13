@@ -108,7 +108,76 @@ class AdministrarCoches
             vista.mostrarError(5);
         }
     }
-    public void editar() { }
+    public void editar()
+    {
+        List<Coche> coches = db.ObtenerCoches();
+        Console.Write(vista.mensajesControl[40]);
+
+        if (!int.TryParse(Console.ReadLine(), out int idLogico) || idLogico < 1 || idLogico > coches.Count)
+        {
+            vista.mostrarError(0);
+            return;
+        }
+        Coche cocheSeleccionado = coches[idLogico - 1];
+        Console.WriteLine($"Seleccionado VIN: {cocheSeleccionado.VIN}");
+
+
+        Console.Write($"Nuevo ModeloId ({cocheSeleccionado.ModeloNombre}): ");
+        string idString = Console.ReadLine()?.Trim();
+        if (!string.IsNullOrWhiteSpace(idString))
+        {
+            if (int.TryParse(idString, out int idAux))
+            {
+                cocheSeleccionado.ModeloId = idAux;
+            }
+            else
+            {
+                vista.mostrarError(0);
+                return;
+            }
+        }
+
+        Console.Write($"Nuevo ColorId ({cocheSeleccionado.ColorNombre}): ");
+        string colorString = Console.ReadLine()?.Trim();
+        if (!string.IsNullOrWhiteSpace(colorString))
+        {
+            if (int.TryParse(colorString, out int colorAux))
+            {
+                cocheSeleccionado.ColorId = colorAux;
+            }
+            else
+            {
+                vista.mostrarError(0);
+                return;
+            }
+        }
+
+        Console.Write($"Nuevo PaqueteId ({cocheSeleccionado.PaqueteNombre}): ");
+        string extraString = Console.ReadLine()?.Trim();
+        if (!string.IsNullOrWhiteSpace(extraString))
+        {
+            if (int.TryParse(extraString, out int extraAux))
+            {
+                cocheSeleccionado.PaqueteId = extraAux;
+            }
+            else
+            {
+                vista.mostrarError(0);
+                return;
+            }
+        }
+
+        try
+        {
+            db.ActualizarCoche(cocheSeleccionado);
+            vista.mostrarConfirmacion(8);
+        }
+        catch (Exception ex)
+        {
+            vista.mostrarError(6);
+        }
+
+    }
     public void motor()
     {
         List<Coche> coches = db.ObtenerCoches();
@@ -134,7 +203,7 @@ class AdministrarCoches
         {
             foreach (var m in motoresLibres)
             {
-                Console.WriteLine($"- {m.NumSerie} (Tipo ID: {m.MotorTipoId})");
+                Console.WriteLine($"- {m.NumSerie} ( ID: {m.MotorTipoId})");
             }
         }
 

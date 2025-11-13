@@ -295,19 +295,13 @@ class DbConsultas
             UPDATE Coche
             SET modelo_id = @modelo_id,
                 color_id = @color_id,
-                paquete_id = @paquete_id,
-                motor_serie = @motor_serie,
-                fecha_fabricacion = @fecha_fabricacion,
-                observaciones = @observaciones
+                paquete_id = @paquete_id
             WHERE vin = @vin";
         using var cmd = new MySqlCommand(sql, conn);
         cmd.Parameters.AddWithValue("@vin", c.VIN);
         cmd.Parameters.AddWithValue("@modelo_id", c.ModeloId);
         cmd.Parameters.AddWithValue("@color_id", c.ColorId);
-        cmd.Parameters.AddWithValue("@paquete_id", (object?)c.PaqueteId ?? DBNull.Value);
-        cmd.Parameters.AddWithValue("@motor_serie", (object?)c.MotorSerie ?? DBNull.Value);
-        cmd.Parameters.AddWithValue("@fecha_fabricacion", (object?)c.FechaFabricacion ?? DBNull.Value);
-        cmd.Parameters.AddWithValue("@observaciones", (object?)c.Observaciones ?? DBNull.Value);
+        cmd.Parameters.AddWithValue("@paquete_id", c.PaqueteId);
         cmd.ExecuteNonQuery();
     }
 
