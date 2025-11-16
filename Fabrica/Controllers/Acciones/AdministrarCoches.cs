@@ -2,6 +2,9 @@
 using System.ComponentModel.DataAnnotations;
 using System.Text.RegularExpressions;
 
+
+
+
 class AdministrarCoches
 {
     private VistaFabrica vista;
@@ -76,6 +79,7 @@ class AdministrarCoches
             vista.mostrarError(1);
             return;
         }
+        new AdministrarColores(vista, db).listas();
 
         Console.Write(vista.mensajesControl[20]);
         if (!int.TryParse(Console.ReadLine(), out int modeloId))
@@ -84,6 +88,7 @@ class AdministrarCoches
             return;
         }
 
+        new AdministrarColores(vista, db).listas();
         Console.Write(vista.mensajesControl[21]);
         if (!int.TryParse(Console.ReadLine(), out int colorId))
         {
@@ -91,6 +96,7 @@ class AdministrarCoches
             return;
         }
 
+        new AdministrarExtras(vista, db).listas();
         Console.Write(vista.mensajesControl[22]);
         if (!int.TryParse(Console.ReadLine(), out int paqueteId))
         {
@@ -124,7 +130,7 @@ class AdministrarCoches
         Coche cocheSeleccionado = coches[idLogico - 1];
         Console.WriteLine($"Seleccionado VIN: {cocheSeleccionado.VIN}");
 
-
+        new AdministrarModelos(vista, db).listas();
         Console.Write($"Nuevo ModeloId ({cocheSeleccionado.ModeloNombre}): ");
         string idString = Console.ReadLine()?.Trim();
         if (!string.IsNullOrWhiteSpace(idString))
@@ -140,6 +146,7 @@ class AdministrarCoches
             }
         }
 
+        new AdministrarColores(vista, db).listas();
         Console.Write($"Nuevo ColorId ({cocheSeleccionado.ColorNombre}): ");
         string colorString = Console.ReadLine()?.Trim();
         if (!string.IsNullOrWhiteSpace(colorString))
@@ -155,6 +162,7 @@ class AdministrarCoches
             }
         }
 
+        new AdministrarExtras(vista, db).listas();
         Console.Write($"Nuevo PaqueteId ({cocheSeleccionado.PaqueteNombre}): ");
         string extraString = Console.ReadLine()?.Trim();
         if (!string.IsNullOrWhiteSpace(extraString))
@@ -205,14 +213,20 @@ class AdministrarCoches
         }
         else
         {
-            foreach (var m in motoresLibres)
+            for (int i = 0; i < motoresLibres.Count; i++)
             {
-                Console.WriteLine($"- {m.NumSerie} ( ID: {m.MotorTipoId})");
+                Console.WriteLine($"- {motoresLibres[i].NumSerie} (ID: {i + 1})");
             }
         }
-
         Console.Write(vista.mensajesControl[23]);
-        string? nuevoMotorSerie = Console.ReadLine()?.Trim();
+        if (!int.TryParse(Console.ReadLine(), out int idLogicoMotor) || idLogico < 1 || idLogico > motoresLibres.Count)
+        {
+            vista.mostrarError(0);
+            return;
+        }
+        var motorSeleccionado = motoresLibres[idLogicoMotor - 1];
+
+        string nuevoMotorSerie = motorSeleccionado.NumSerie;
 
 
         if (string.IsNullOrWhiteSpace(nuevoMotorSerie))
