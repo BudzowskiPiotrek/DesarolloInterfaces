@@ -80,6 +80,7 @@ class AdministrarExtras
         }
         catch (Exception ex)
         {
+            Console.WriteLine($"{ex.Message}");
             vista.mostrarError(5);
         }
     }
@@ -111,6 +112,7 @@ class AdministrarExtras
         }
         catch (Exception ex)
         {
+            Console.WriteLine($"{ex.Message}");
             vista.mostrarError(6);
         }
     }

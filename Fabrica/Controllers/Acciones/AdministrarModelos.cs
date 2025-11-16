@@ -83,7 +83,9 @@ class AdministrarModelos
         }
         catch (Exception ex)
         {
+            Console.WriteLine($"{ex.Message}");
             vista.mostrarError(5);
+            
         }
     }
     public void editar()
@@ -118,7 +120,9 @@ class AdministrarModelos
         }
         catch (Exception ex)
         {
+            Console.WriteLine($"{ex.Message}");
             vista.mostrarError(6);
+            
         }
     }
 }

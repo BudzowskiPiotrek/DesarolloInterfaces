@@ -22,7 +22,7 @@ class VistaFabrica
         "4. Asignar/Modificar Motor",          // [16]
         "5. Cambiar Paquete (Extras)",         // [17]
         "6. Cambiar Color",                    // [18]
-        "Introduce VIN: ",                     // [19]
+        "Introduce VIN: (17 Caracteres 0-9 y A-Z) ",                              // [19]
         "Introduce ID de modelo: ",            // [20]
         "Introduce ID de color: ",             // [21]
         "Introduce ID de paquete: ",           // [22]
@@ -50,7 +50,7 @@ class VistaFabrica
     private readonly List<string> mensajesError = new List<string>
     {
         "❌ Opción no válida. Vuelve a intentar.",           // [0]
-        "❌ El VIN no puede estar vacío.",                   // [1]
+        "❌ El VIN no puede estar vacío o tener menos de 17 Caracteres.",                   // [1]
         "❌ ID de modelo no válido.",                        // [2]
         "❌ ID de color no válido.",                         // [3]
         "❌ ID de paquete no válido.",                       // [4]

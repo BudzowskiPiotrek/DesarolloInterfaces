@@ -1,5 +1,6 @@
 
 using System.ComponentModel.DataAnnotations;
+using System.Text.RegularExpressions;
 
 class AdministrarCoches
 {
@@ -66,10 +67,11 @@ class AdministrarCoches
     }
     public void anadir()
     {
+        const string vinPattern = @"^[0-9A-Z]{17}$";
         Console.Write(vista.mensajesControl[19]);
-        string vin = Console.ReadLine()?.Trim() ?? "";
+        string vin = Console.ReadLine()?.Trim().ToUpper() ?? "";
 
-        if (string.IsNullOrWhiteSpace(vin))
+        if (string.IsNullOrWhiteSpace(vin) || !Regex.IsMatch(vin, vinPattern))
         {
             vista.mostrarError(1);
             return;
@@ -105,6 +107,7 @@ class AdministrarCoches
         }
         catch (Exception ex)
         {
+            Console.WriteLine($"{ex.Message}");
             vista.mostrarError(5);
         }
     }
@@ -174,6 +177,7 @@ class AdministrarCoches
         }
         catch (Exception ex)
         {
+            Console.WriteLine($"{ex.Message}");
             vista.mostrarError(6);
         }
 
@@ -232,6 +236,7 @@ class AdministrarCoches
         }
         catch (Exception ex)
         {
+            Console.WriteLine($"{ex.Message}");
             vista.mostrarError(6);
         }
     }
@@ -269,6 +274,7 @@ class AdministrarCoches
         }
         catch (Exception ex)
         {
+            Console.WriteLine($"{ex.Message}");
             vista.mostrarError(6);
         }
     }
@@ -306,6 +312,7 @@ class AdministrarCoches
         }
         catch (Exception ex)
         {
+            Console.WriteLine($"{ex.Message}");
             vista.mostrarError(6);
         }
     }
