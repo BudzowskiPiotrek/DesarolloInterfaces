@@ -5,10 +5,10 @@ class ModeloHonda
     public string? CodigoModelo { get; set; }             // NULL
     public string? Segmento { get; set; }                 // NULL
 
-    // 1. Constructor Vacío
+    // 1. Constructor na nai
     public ModeloHonda() { }
 
-    // 2. Constructor Mínimo (Campos NOT NULL)
+    // 2. Constructor Min
     public ModeloHonda(string nombre){
         Id = 0;
         Nombre = nombre;

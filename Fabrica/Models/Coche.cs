@@ -8,15 +8,15 @@ class Coche
     public DateTime? FechaFabricacion { get; set; }      // NULL
     public string? Observaciones { get; set; }           // NULL
 
-    // solo para leer (Propiedades de navegación o JOINs)
+    // solo para leer
     public string? ModeloNombre { get; set; }
     public string? ColorNombre { get; set; }
     public string? PaqueteNombre { get; set; }
 
-    // 1. Constructor Vacío
+    // 1. Constructor na nai
     public Coche() { }
 
-    // 2. Constructor Mínimo (Campos NOT NULL)
+    // 2. Constructor Min
     public Coche(string vin, int modeloId, int colorId, int paqueteId)
     {
         VIN = vin;

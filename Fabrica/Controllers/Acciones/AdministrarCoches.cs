@@ -1,10 +1,6 @@
 
 using System.ComponentModel.DataAnnotations;
 using System.Text.RegularExpressions;
-
-
-
-
 class AdministrarCoches
 {
     private VistaFabrica vista;
@@ -16,7 +12,6 @@ class AdministrarCoches
         this.vista = vista;
         this.db = db;
     }
-
     public void Empezar()
     {
         while (ejecutado)
@@ -56,8 +51,6 @@ class AdministrarCoches
                 return true;
         }
     }
-
-
     public void listas()
     {
         List<Coche> coches = db.ObtenerCoches();

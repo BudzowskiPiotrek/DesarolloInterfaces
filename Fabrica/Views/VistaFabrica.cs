@@ -39,7 +39,7 @@ class VistaFabrica
         "Introduce el ID lógico del color a editar: ",                            // [33]
         "Introduce el nombre del color:",                                         // [34]
         "Introduce el código de pintura: ",                                       // [35]
-        "Introduce el acabado: ",                                                 // [36]
+        "Introduce el acabado: solido, perlado, metalizado,",                     // [36]
         "Introduce el nombre del paquete extra:",                                 // [37]
         "Introduce la descripción (opcional):",                                   // [38]
         "Introduce el ID lógico del paquete a editar:",                           // [39]
