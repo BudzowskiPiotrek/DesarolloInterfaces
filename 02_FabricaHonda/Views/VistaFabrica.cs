@@ -89,6 +89,7 @@ class VistaFabrica
     }
     public void mostrarMenuComun()
     {
+
         for (int i = 11; i < 15; i++)
         {
             Console.WriteLine(mensajesControl[i]);
@@ -97,6 +98,7 @@ class VistaFabrica
     }
     public void mostrarMenuCoche()
     {
+
         for (int i = 11; i < 19; i++)
         {
             if (i == 13 || i == 14)
@@ -116,7 +118,7 @@ class VistaFabrica
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine($"\n{mensajesConfirmacion[numero]}");
             Console.ResetColor();
-            Console.WriteLine("\nPresiona cualquier tecla para continuar...");
+            Console.WriteLine("\nAnda presiona cualquier tecla para continuar...");
             Console.ReadKey(true);
         }
     }
@@ -127,7 +129,7 @@ class VistaFabrica
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine($"\n{mensajesError[numero]}");
             Console.ResetColor();
-            Console.WriteLine("\nPresiona cualquier tecla para continuar...");
+            Console.WriteLine("\nAnda presiona cualquier tecla para continuar...");
             Console.ReadKey(true);
         }
     }

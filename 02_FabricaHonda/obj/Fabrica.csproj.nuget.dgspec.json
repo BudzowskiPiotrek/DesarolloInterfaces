@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Wilku\\Documents\\GitHub\\DesarolloInterfaces\\Fabrica\\Fabrica.csproj": {}
+    "C:\\Users\\Wilku\\Documents\\GitHub\\DesarolloInterfaces\\02_FabricaHonda\\Fabrica.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Wilku\\Documents\\GitHub\\DesarolloInterfaces\\Fabrica\\Fabrica.csproj": {
+    "C:\\Users\\Wilku\\Documents\\GitHub\\DesarolloInterfaces\\02_FabricaHonda\\Fabrica.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Wilku\\Documents\\GitHub\\DesarolloInterfaces\\Fabrica\\Fabrica.csproj",
+        "projectUniqueName": "C:\\Users\\Wilku\\Documents\\GitHub\\DesarolloInterfaces\\02_FabricaHonda\\Fabrica.csproj",
         "projectName": "Fabrica",
-        "projectPath": "C:\\Users\\Wilku\\Documents\\GitHub\\DesarolloInterfaces\\Fabrica\\Fabrica.csproj",
+        "projectPath": "C:\\Users\\Wilku\\Documents\\GitHub\\DesarolloInterfaces\\02_FabricaHonda\\Fabrica.csproj",
         "packagesPath": "C:\\Users\\Wilku\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Wilku\\Documents\\GitHub\\DesarolloInterfaces\\Fabrica\\obj\\",
+        "outputPath": "C:\\Users\\Wilku\\Documents\\GitHub\\DesarolloInterfaces\\02_FabricaHonda\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Wilku\\AppData\\Roaming\\NuGet\\NuGet.Config"

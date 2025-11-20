@@ -212,7 +212,7 @@ class AdministrarCoches
             }
         }
         Console.Write(vista.mensajesControl[23]);
-        if (!int.TryParse(Console.ReadLine(), out int idLogicoMotor) || idLogico < 1 || idLogico > motoresLibres.Count)
+        if (!int.TryParse(Console.ReadLine(), out int idLogicoMotor) || idLogicoMotor < 1 || idLogicoMotor > motoresLibres.Count)
         {
             vista.mostrarError(0);
             return;

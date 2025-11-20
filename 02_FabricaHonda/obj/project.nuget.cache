@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "4sPzkJTAtV0=",
+  "dgSpecHash": "SXbOR3Lb7jc=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Wilku\\Documents\\GitHub\\DesarolloInterfaces\\Fabrica\\Fabrica.csproj",
+  "projectFilePath": "C:\\Users\\Wilku\\Documents\\GitHub\\DesarolloInterfaces\\02_FabricaHonda\\Fabrica.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Wilku\\.nuget\\packages\\bouncycastle.cryptography\\2.6.2\\bouncycastle.cryptography.2.6.2.nupkg.sha512",
     "C:\\Users\\Wilku\\.nuget\\packages\\google.protobuf\\3.32.0\\google.protobuf.3.32.0.nupkg.sha512",
