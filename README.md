@@ -1,73 +1,57 @@
-# 💻 Desarrollo de Interfaces (DAM) con C# y .NET
+# 💻 Desarrollo de Interfaces (DI)
 
-![Estado del Curso](https://img.shields.io/badge/Curso-2º%20DAM-blue?style=flat-square)
-![Lenguaje Principal](https://img.shields.io/badge/Lenguaje-C%23-blueviolet?style=flat-square)
-![Framework](https://img.shields.io/badge/Plataforma-.NET-purple?style=flat-square)
-![Licencia](https://img.shields.io/badge/Licencia-MIT-green?style=flat-square)
+Diseño y Creación de Interfaces de Usuario con C# y .NET.
 
----
+## ✨ Descripción del Proyecto
 
-## ✨ Introducción al Repositorio
+Este repositorio es el archivo oficial para la asignatura de **Desarrollo de Interfaces (DI)**, centrado en el uso del lenguaje **C#** y la plataforma **.NET** para construir aplicaciones con una sólida experiencia de usuario (UI/UX).
 
-Este repositorio contiene las prácticas y proyectos realizados en el módulo de **Desarrollo de Interfaces (DI)**. El objetivo es dominar las herramientas y tecnologías de Microsoft para la creación de **aplicaciones de escritorio y/o web** con un enfoque en la experiencia de usuario (UI/UX).
+Aquí se encuentran todas las prácticas, ejercicios y proyectos finales desarrollados para:
 
-Utilizamos el lenguaje **C#** y la plataforma **.NET** (posiblemente con **WPF**, **Windows Forms** o **ASP.NET Core**) para construir *software* robusto con interfaces atractivas e intuitivas.
+* **Aplicaciones de Escritorio:** Usando tecnologías como WPF (Windows Presentation Foundation) o Windows Forms.
+* **Aplicaciones Web:** Con el framework ASP.NET Core (si aplica).
 
-### 🎯 Contenidos Clave:
+El objetivo es dominar la separación de la lógica de negocio y la presentación, y la implementación de interfaces atractivas e intuitivas.
 
-* **Diseño de Layouts:** Uso de contenedores y *panels* para organizar elementos.
-* **Controles Avanzados:** Manejo de listas, árboles y otros *widgets* complejos.
-* **Manejo de Eventos:** Interacción del usuario y respuesta del sistema.
-* **Patrones de Diseño:** Posiblemente una introducción al patrón **MVVM** (Model-View-ViewModel) para separar la lógica de negocio de la interfaz.
-* **Conexión con Datos:** Uso de ADO.NET o Entity Framework Core para mostrar datos en la UI.
+## 🛠 Tecnologías Principales
 
----
+El contenido de este repositorio gira en torno al ecosistema de Microsoft:
 
-## 🛠️ Tecnologías y Herramientas
-
-| Tecnología | Descripción |
+| Tecnología | Rol en el Proyecto |
 | :--- | :--- |
-| **C#** | Lenguaje de programación principal. |
-| **.NET Framework / .NET Core** | Plataforma para construir aplicaciones. |
-| **Visual Studio** | Entorno de Desarrollo Integrado (IDE) principal. |
-| **WPF / WinForms / ASP.NET** | Tecnología específica de la interfaz de usuario. |
-| **XAML** | Lenguaje declarativo para definir interfaces (si se usa WPF). |
-
----
+| **C#** | Lenguaje de programación principal para la lógica. |
+| **.NET Framework / .NET Core** | Plataforma base para el desarrollo. |
+| **WPF / Windows Forms** | Frameworks para la creación de interfaces de escritorio. |
+| **Visual Studio** | Entorno de Desarrollo Integrado (IDE) recomendado. |
+| **XAML** | Lenguaje declarativo utilizado para definir la interfaz de WPF. |
 
 ## 📂 Estructura de Proyectos
 
-Cada carpeta es una solución o proyecto desarrollado a lo largo del curso.
+Cada carpeta numerada corresponde a una práctica o proyecto específico, generalmente siguiendo el orden cronológico del curso.
 
-| Carpeta | Descripción | Estado |
-| :--- | :--- | :--- |
-| **`01_ControlesBasicos`** | Primeros ejercicios de manejo de botones, etiquetas y cajas de texto. | ✅ Completado |
-| **`02_Diseno_WPF_XAML`** | Prácticas centradas en el diseño visual y los *layouts* avanzados. | ✅ Completado |
-| **`03_Eventos_Dialogos`** | Manejo de eventos del usuario y creación de ventanas modales. | ⚙️ En Curso |
-| **`04_MVVM_Patrones`** | Implementación de patrones de diseño para la separación de capas. | ⚙️ En Curso |
-| **`ProyectoFinal_DI`**| (Pendiente) Desarrollo de la aplicación final del módulo. | ⏳ Pendiente |
+| Carpeta | Descripción |
+| :--- | :--- |
+| **`00_ProyectoMenu`** | Proyecto inicial o base de un menú principal que enlaza a otras prácticas. |
+| **`01_FabricaHonda`** | Primera práctica compleja. Un ejercicio de diseño de formularios. |
+| **`02_FabricaHonda`** | Continuación o versión avanzada de la práctica de la Fábrica Honda, introduciendo nuevos controles. |
+| **`03_Examen`** | Archivos relacionados con una evaluación o ejercicio de síntesis del módulo. |
 
----
+## 🚀 Cómo Abrir y Ejecutar
 
-## 🚀 Instalación y Ejecución
+Para trabajar con estos proyectos, es imprescindible tener instalado **Visual Studio** (versión Community o superior).
 
-Para abrir y ejecutar cualquiera de los proyectos, necesitas **Visual Studio** (preferiblemente la versión más reciente con las cargas de trabajo de .NET Desktop/Web instaladas).
-
-1.  **Clona el repositorio:**
+1.  **Clonar el repositorio:**
     ```bash
     git clone [https://github.com/BudzowskiPiotrek/DesarolloInterfaces.git](https://github.com/BudzowskiPiotrek/DesarolloInterfaces.git)
     ```
-2.  **Abre la Solución:**
-    * Navega a la carpeta del proyecto.
-    * Abre el archivo de solución (`.sln`) con Visual Studio.
-3.  **Compila y Ejecuta:**
-    * Una vez cargado, asegúrate de que el proyecto de inicio esté seleccionado.
-    * Presiona **F5** o haz clic en el botón **Run** (▶️) para compilar y ejecutar la aplicación.
-
----
+2.  **Abrir la Solución:**
+    * Abre el archivo de solución `DesarolloInterfaces.sln` con Visual Studio.
+3.  **Compilar y Ejecutar:**
+    * Selecciona el proyecto deseado como **"Startup Project"**.
+    * Presiona **F5** o haz clic en el botón de "Iniciar" para ejecutar la aplicación.
 
 ## 👤 Autor
 
-Desarrollado por [BudzowskiPiotrek](https://github.com/BudzowskiPiotrek) como parte de mi formación en DAM.
+[**Piotrek Budzowski**](https://github.com/BudzowskiPiotrek)
 
-¡Cualquier sugerencia o pull request es bienvenida!
+---
