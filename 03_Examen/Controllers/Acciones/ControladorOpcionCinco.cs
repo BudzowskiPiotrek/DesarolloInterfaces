@@ -8,11 +8,11 @@ public class ControladorOpcionCinco
     private int idProducto;
     private int idCategoria;
 
-    public ControladorOpcionCinco(Vista_Examen vista, DB_Consultas db, int idMesa, int idcategoria, int idCategoria)
+    public ControladorOpcionCinco(Vista_Examen vista, DB_Consultas db, int idMesa, int idCategoria, int idProducto)
     {
         this.idMesa = idMesa;
-        this.idCategoria = idcategoria;
-        this.idProducto = idCategoria;
+        this.idCategoria = idCategoria;
+        this.idProducto = idProducto;
         this.vista = vista;
         this.db = db;
     }
