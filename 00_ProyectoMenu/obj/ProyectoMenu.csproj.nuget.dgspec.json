@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Wilku\\Documents\\GitHub\\DesarolloInterfaces\\ProyectoMenu\\ProyectoMenu.csproj": {}
+    "C:\\Users\\Wilku\\Documents\\GitHub\\DesarolloInterfaces\\00_ProyectoMenu\\ProyectoMenu.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Wilku\\Documents\\GitHub\\DesarolloInterfaces\\ProyectoMenu\\ProyectoMenu.csproj": {
+    "C:\\Users\\Wilku\\Documents\\GitHub\\DesarolloInterfaces\\00_ProyectoMenu\\ProyectoMenu.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Wilku\\Documents\\GitHub\\DesarolloInterfaces\\ProyectoMenu\\ProyectoMenu.csproj",
+        "projectUniqueName": "C:\\Users\\Wilku\\Documents\\GitHub\\DesarolloInterfaces\\00_ProyectoMenu\\ProyectoMenu.csproj",
         "projectName": "ProyectoMenu",
-        "projectPath": "C:\\Users\\Wilku\\Documents\\GitHub\\DesarolloInterfaces\\ProyectoMenu\\ProyectoMenu.csproj",
+        "projectPath": "C:\\Users\\Wilku\\Documents\\GitHub\\DesarolloInterfaces\\00_ProyectoMenu\\ProyectoMenu.csproj",
         "packagesPath": "C:\\Users\\Wilku\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Wilku\\Documents\\GitHub\\DesarolloInterfaces\\ProyectoMenu\\obj\\",
+        "outputPath": "C:\\Users\\Wilku\\Documents\\GitHub\\DesarolloInterfaces\\00_ProyectoMenu\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Wilku\\AppData\\Roaming\\NuGet\\NuGet.Config"

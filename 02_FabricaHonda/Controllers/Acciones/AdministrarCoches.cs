@@ -113,6 +113,7 @@ class AdministrarCoches
     public void editar()
     {
         List<Coche> coches = db.ObtenerCoches();
+        new AdministrarModelos(vista, db).listas();
         Console.Write(vista.mensajesControl[40]);
 
         if (!int.TryParse(Console.ReadLine(), out int idLogico) || idLogico < 1 || idLogico > coches.Count)
@@ -121,9 +122,9 @@ class AdministrarCoches
             return;
         }
         Coche cocheSeleccionado = coches[idLogico - 1];
+
         Console.WriteLine($"Seleccionado VIN: {cocheSeleccionado.VIN}");
 
-        new AdministrarModelos(vista, db).listas();
         Console.Write($"Nuevo ModeloId ({cocheSeleccionado.ModeloNombre}): ");
         string idString = Console.ReadLine()?.Trim();
         if (!string.IsNullOrWhiteSpace(idString))
@@ -196,9 +197,7 @@ class AdministrarCoches
         Coche cocheSeleccionado = coches[idLogico - 1];
         Console.WriteLine($"Seleccionado VIN: {cocheSeleccionado.VIN}, Motor actual: {cocheSeleccionado.MotorSerie ?? "N/A"}");
 
-        var motoresLibres = motor
-            .Where(m => !coches.Any(c => c.MotorSerie == m.NumSerie))
-            .ToList();
+        var motoresLibres = motor.Where(m => !coches.Any(c => c.MotorSerie == m.NumSerie)).ToList();
 
         if (motoresLibres.Count == 0)
         {

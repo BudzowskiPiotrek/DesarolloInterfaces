@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ProyectoMenu
-build_property.ProjectDir = C:\Users\Wilku\Documents\GitHub\DesarolloInterfaces\ProyectoMenu\
+build_property.ProjectDir = C:\Users\Wilku\Documents\GitHub\DesarolloInterfaces\00_ProyectoMenu\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
